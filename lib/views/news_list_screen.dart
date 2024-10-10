@@ -36,7 +36,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
                   leading: Image.network(snapshot.data![index].image),
                   title: Text(snapshot.data![index].headline),
                   subtitle: Text('${snapshot.data![index].source} - ${snapshot.data![index].datetime}'),
-                  onTap: () => ErrorPage();
+                  onTap: () => ErrorPage(),
                 );
               },
             );

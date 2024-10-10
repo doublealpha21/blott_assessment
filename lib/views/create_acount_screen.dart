@@ -1,4 +1,4 @@
-import 'package:blott_assessment/views/get_started_screen.dart';
+import 'package:blott_asessment/views/get_started_screen.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountScreen extends StatefulWidget {
@@ -43,10 +43,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         title: Text(
           'Your Legal Name',
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-            color: Colors.black,
-            fontWeight: FontWeight.w700,
-            fontSize: 33,
-          ),
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+                fontSize: 33,
+              ),
         ),
       ),
       body: ListView(
@@ -55,10 +55,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
           Text(
             'We need to know a bit about you so that we can create your account.',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: const Color(0xFF737373),
-              fontWeight: FontWeight.w400,
-              fontSize: 19,
-            ),
+                  color: const Color(0xFF737373),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 19,
+                ),
           ),
           const SizedBox(
             height: 8,
@@ -99,7 +99,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -115,4 +115,4 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       ), //
     );
   }
-
+}

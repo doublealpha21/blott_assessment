@@ -15,7 +15,7 @@ class _ErrorPageState extends State<ErrorPage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          'Hey $_firstname',
+          'Hey first_name',
           style: const TextStyle(
             color: Colors.white,
           ),
