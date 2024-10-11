@@ -1,6 +1,5 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:blott_asessment/views/news_list_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -30,8 +29,8 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
               Text(
                 'Get the Most out of Blott',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Colors.black,
-                ),
+                      color: Colors.black,
+                    ),
               ),
               const Icon(
                 Icons.check_box,
@@ -45,8 +44,8 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
           Text(
             'Allow notifications to stay in the loop with\n your payments, requests and groups.',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: const Color(0xFF737373),
-            ),
+                  color: const Color(0xFF737373),
+                ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
