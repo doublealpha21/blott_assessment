@@ -14,56 +14,74 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: SvgPicture.asset('assets/message-notif.svg'),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
             children: [
-              Text(
-                'Get the Most out of Blott',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: Colors.black,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: SvgPicture.asset('assets/message-notif.svg'),
                     ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: const TextSpan(
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                        children: [
+                          TextSpan(text: 'Get the most out of Blott '),
+                          WidgetSpan(
+                            child: Icon(Icons.check_box_rounded,
+                                color: Colors.green, size: 24),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Text(
+                      'Allow notifications to stay in the loop with\n your payments, requests and groups.',
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            color: const Color(0xFF737373),
+                          ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                  ],
+                ),
               ),
-              const Icon(
-                Icons.check_box,
-                color: Colors.green,
-              )
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: _onPressed,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28),
+                    ),
+                  ),
+                  child: Text(
+                    'Continue',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: Colors.white,
+                        ),
+                  ),
+                ),
+              ),
             ],
           ),
-          const SizedBox(
-            height: 16,
-          ),
-          Text(
-            'Allow notifications to stay in the loop with\n your payments, requests and groups.',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: const Color(0xFF737373),
-                ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          TextButton(
-            onPressed: _onPressed,
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.deepPurple,
-            ),
-            child: const Text(
-              'Continue',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -84,7 +102,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => NewsListScreen(),
+        builder: (context) => const NewsListScreen(),
       ),
     );
   }
