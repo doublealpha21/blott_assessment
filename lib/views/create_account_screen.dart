@@ -1,3 +1,4 @@
+import 'package:blott_asessment/services/user_data.dart';
 import 'package:blott_asessment/views/get_started_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   bool _isButtonEnabled = false;
+
+  void _saveNameAndNavigate() async {
+    await UserDataManager.saveFirstName(_firstNameController.text);
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const GetStartedScreen(),
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -99,15 +110,12 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const GetStartedScreen(),
-            ),
-          );
-        },
-        backgroundColor: const Color(0xFF523AE4),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
+        onPressed: _isButtonEnabled ? _saveNameAndNavigate : null,
+        backgroundColor:
+            _isButtonEnabled ? const Color(0xFF523AE4) : Colors.grey,
         child: const Icon(
           Icons.arrow_forward_ios_rounded,
           color: Colors.white,

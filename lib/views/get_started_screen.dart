@@ -24,7 +24,9 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Center(
-                      child: SvgPicture.asset('assets/message-notif.svg'),
+                      child: SvgPicture.asset(
+                        'assets/message-notif.svg',
+                      ),
                     ),
                     const SizedBox(
                       height: 16,
@@ -37,10 +39,15 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                         children: [
-                          TextSpan(text: 'Get the most out of Blott '),
+                          TextSpan(
+                            text: 'Get the most out of Blott ',
+                          ),
                           WidgetSpan(
-                            child: Icon(Icons.check_box_rounded,
-                                color: Colors.green, size: 24),
+                            child: Icon(
+                              Icons.check_box_rounded,
+                              color: Colors.green,
+                              size: 24,
+                            ),
                           ),
                         ],
                       ),
@@ -49,7 +56,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       height: 16,
                     ),
                     Text(
-                      'Allow notifications to stay in the loop with\n your payments, requests and groups.',
+                      'Allow notifications to stay in the loop with your payments, requests and groups.',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             color: const Color(0xFF737373),
                           ),

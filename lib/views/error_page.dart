@@ -1,3 +1,4 @@
+import 'package:blott_asessment/services/user_data.dart';
 import 'package:flutter/material.dart';
 
 class ErrorPage extends StatefulWidget {
@@ -8,6 +9,19 @@ class ErrorPage extends StatefulWidget {
 }
 
 class _ErrorPageState extends State<ErrorPage> {
+  String? firstName;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadFirstName();
+  }
+
+  Future<void> _loadFirstName() async {
+    firstName = await UserDataManager.getFirstName();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +29,7 @@ class _ErrorPageState extends State<ErrorPage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          'Hey first_name',
+          firstName = 'Hey $firstName',
           style: const TextStyle(
             color: Colors.white,
           ),
